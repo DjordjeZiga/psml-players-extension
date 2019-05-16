@@ -1,0 +1,23 @@
+{
+  "name": "PSML players",
+  "version": "1.0",
+  "description": "Extension f",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://pesdb.net/*"],
+      "js": ["scripts/main.js"]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "scripts/background.js"
+    ],
+    "persistent": true
+  },
+  "manifest_version": 2
+}
