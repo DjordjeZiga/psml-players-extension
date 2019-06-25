@@ -1,0 +1,85 @@
+body {background: linear-gradient(-90deg, #8DABD6, #95BFD6, #8DABD6)}
+main {
+  width: 100vw;
+  height: 100vh;
+  color: #E0DEDE;
+  font-size: 1.1rem;
+}
+
+section {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+	width: 400px;
+	position: fixed;
+	top: -50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	opacity: 0;
+	transition: opacity 650ms ease-in-out;
+	article {
+    text-align: center;
+    background-color: #fff;
+    padding: 45px 60px;
+    p {
+      color: #686E7A;
+      padding-bottom: 20px;
+    }
+	}
+	&::before {
+	  content: "";
+		width: 100vw;
+		height: 100vh;
+	  position: absolute;
+	  top: 50%;
+    left: 50%;
+		transform: translate(-50%,-50%);
+		background-color: hsla(0,0%,100%,.3);
+	}
+	hgroup {
+		text-align: center;
+		padding: 20px 0;
+		background-color: #F4F4F4;
+    border-bottom: 3px solid #8DABD6;
+	  h4 {
+	    font-size: 1.6rem;
+      color: #FF9366;
+      font-weight: 700;
+		}
+	}
+	&.in {
+		opacity: 1;
+		top: 50%;
+	}
+}
+
+button.modal-close, button.modal-btn {
+  transition: all 350ms ease-in-out;
+}
+button.modal-btn {
+  font-weight: bold;
+  color: #fff;
+  padding: 15px 35px;
+  border: 2px solid #fff;
+  &:hover {
+    color: #fff;
+    background-color: HSLA(0, 0%, 100%, .2);
+  }
+}
+button.modal-close {
+  color: #686E7A;
+  padding: 8px 20px;
+  border: 2px solid #D4DCE3;
+  color: #D4DCE3;
+  font-weight: bold;
+  transition: all 250ms ease-in-out;
+  &:hover {
+    border-color: #8DABD6;
+    color: #8DABD6;
+  }
+}
+

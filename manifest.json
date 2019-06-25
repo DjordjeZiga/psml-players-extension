@@ -1,7 +1,10 @@
 {
-  "name": "PSML players",
+  "name": "Manager league players",
   "version": "1.0",
-  "description": "Extension f",
+  "description": "Extension for manager leagues players",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
   "permissions": [
     "activeTab",
     "declarativeContent",
