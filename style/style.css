@@ -277,7 +277,7 @@ fieldset {
 }
 
 .checkbox {
-    margin-top: 3rem;
+    margin-top: 25px;
     margin-bottom: 1rem;
 }
 .checkbox .helper {
@@ -297,7 +297,7 @@ fieldset {
     position: absolute;
     height: 0;
     width: 0.2rem;
-    background-color: #337ab7;
+    background-color: black;
     display: block;
     -webkit-transform-origin: left top;
     transform-origin: left top;
@@ -321,10 +321,10 @@ fieldset {
     transform: rotate(-45deg);
 }
 .checkbox label:hover .helper {
-    color: #337ab7;
+    color: black;
 }
 .checkbox input:checked ~ .helper {
-    color: #337ab7;
+    color: black;
 }
 .checkbox input:checked ~ .helper::after, .checkbox input:checked ~ .helper::before {
     opacity: 1;
