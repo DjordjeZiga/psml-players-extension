@@ -14,7 +14,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["http://pesdb.net/*"],
+      "matches": ["https://pesdb.net/*"],
       "js": ["scripts/main.js"]
     }
   ],
