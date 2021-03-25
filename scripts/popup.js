@@ -1,9 +1,11 @@
 let psmlCheck = document.getElementById('psmlCheck');
+let ppmlCheck = document.getElementById('ppmlCheck');
 let bplCheck = document.getElementById('bplCheck');
 var storage = chrome.storage.sync;
 
 window.onload = function() {
     getPsmlState();
+    getPpmlState();
     getBplState();
 }
 
@@ -13,7 +15,7 @@ psmlCheck.onclick = function() {
     } else {
         savePSMLState(0);
     }
-    chrome.tabs.query({url: "http://pesdb.net/*"}, function(tab) {
+    chrome.tabs.query({url: "https://pesdb.net/*"}, function(tab) {
         chrome.tabs.reload(tab[0].id)
     });
 };
@@ -24,7 +26,18 @@ bplCheck.onclick = function() {
     } else{
         saveBPLState(0);
     }
-    chrome.tabs.query({url: "http://pesdb.net/*"}, function(tab) {
+    chrome.tabs.query({url: "https://pesdb.net/*"}, function(tab) {
+        chrome.tabs.reload(tab[0].id)
+    });
+};
+
+ppmlCheck.onclick = function() {
+    if (ppmlCheck.checked){
+        savePPMLState(1);
+    } else {
+        savePPMLState(0);
+    }
+    chrome.tabs.query({url: "https://pesdb.net/*"}, function(tab) {
         chrome.tabs.reload(tab[0].id)
     });
 };
@@ -35,6 +48,16 @@ function getPsmlState() {
         psmlState = fetchedData.psmlState;
         if (psmlState === 1){
             psmlCheck.checked = true;
+        }
+    });
+}
+
+function getPpmlState() {
+    let ppmlState;
+    storage.get("ppmlState",function (fetchedData) {
+        ppmlState = fetchedData.ppmlState;
+        if (ppmlState === 1){
+            ppmlCheck.checked = true;
         }
     });
 }
@@ -54,7 +77,13 @@ function savePSMLState(value) {
     var data = {};
     data['psmlState'] = value
     storage.set({"psmlState": value}, function(){
-        console.log('Value is set to ' + 'dsf');
+    });
+}
+
+function savePPMLState(value) {
+    var data = {};
+    data['ppmlState'] = value
+    storage.set({"ppmlState": value}, function(){
     });
 }
 
@@ -62,6 +91,5 @@ function saveBPLState(value) {
     var data = {};
     data['bplState'] = value
     storage.set({"bplState": value}, function(){
-        console.log('Value is set to ' + 'dsf');
     });
 }
