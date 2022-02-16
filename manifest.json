@@ -1,6 +1,6 @@
 {
   "name": "Manager league players",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "Extension for manager leagues players",
   "action": {
     "default_icon": "images/icon.png",
